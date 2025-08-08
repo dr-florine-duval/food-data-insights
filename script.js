@@ -38,5 +38,10 @@ helpButtons.forEach((button, index) => {
                 tooltips[index].style.display = 'none';
             }
         });
+
+        // Show tooltip on click for mobile
+        button.addEventListener('click', function() {
+            tooltips[index].style.display = tooltips[index].style.display === 'block' ? 'none' : 'block';
+        });
     }
 });
