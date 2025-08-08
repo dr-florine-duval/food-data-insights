@@ -21,32 +21,28 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     font-family: 'Segoe UI', Optima, Tahoma, Geneva, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-    color: var(--link-color); /* Change to your desired color for normal state */
+    color: var(--link-color);
 }
 
 a:hover {
-    color: var(--link-hover-color); /* Change to your desired color when hovered */
-}
-
-a:visited {
-}
-
-a:active {
+    color: var(--link-hover-color);
 }
 
 small a {
-    color: var(--coolors-2-darker)
+    color: var(--coolors-2-darker);
 }
 
-
+/* Images */
 .thumbnail {
-    width: 150px;
+    max-width: 100%;
     height: auto;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -57,54 +53,46 @@ small a {
     transform: scale(1.05);
 }
 
+/* Charts */
 .chart-wrapper {
     position: relative;
 }
 
-.chart-container {
-    width: 95%;
-    height: 300px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-    overflow: auto;
-    background-color: #fff;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
+.chart-container,
 .chart-iframe {
-    width: 95%;
-    height: 300px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 300px;
     border: 1px solid #ccc;
     padding: 10px;
-    margin: 10px;
-    overflow: auto;
+    margin: 10px auto;
+    overflow-x: auto;
     background-color: #fff;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Styles for the button */
+/* Help button */
 .help-button {
     background-color: var(--accent-color);
     color: white;
     border: none;
     border-radius: 50%;
-    width: 3%;
-    height: auto;
-    aspect-ratio: 1;
-    font-size: 100%;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
     font-weight: bold;
     text-align: center;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: absolute; /* Position for tooltip */
-    top: 4%; /* Adjust to position it at the top */
-    left: 2%; /* Adjust to position it at the left */
-    z-index: 20; /* Ensure it is above other elements */
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 20;
     outline: none;
 }
 
-/* Styles for the tooltip */
+/* Tooltip */
 .tooltip {
     display: none;
     position: absolute;
@@ -114,38 +102,88 @@ small a {
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 30;
-    max-width: 67%; /* Width of the tooltip */
-    top: 10%; /* Position below the button */
-    left: 7%; /* Center the tooltip */
-    transform: translateX(0%); /* Center alignment */
+    max-width: 90%;
+    top: 60px;
+    left: 10px;
+    transform: translateX(0%);
     transition: opacity 0.2s;
 }
 
-/* Show tooltip on hover */
 .help-button:hover + .tooltip {
     display: block;
 }
 
+/* Open plot button */
 .open-plot-new-tab-button {
-    background-color: rgba(255, 255, 255, 0);
+    background-color: transparent;
     border: none;
-    border-radius: 0%; /* Round shape */
-    width: 3%;
-    height: auto;
-    aspect-ratio: 1;
-    font-size: 120%;
+    border-radius: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
     font-weight: bold;
     text-align: left;
     margin: 0;
     cursor: pointer;
     position: absolute;
-    top: 15%; /* Adjust to position it at the top */
-    left: 1.5%; /* Adjust to position it at the left */
-    z-index: 40; /* Ensure it is above other elements */
+    top: 60px;
+    left: 10px;
+    z-index: 40;
     outline: none;
     text-decoration: none;
 }
 
 .plot-button:hover {
-    background-color: rgba(223, 232, 210, 0.8); /* Change background on hover for effect */
+    background-color: rgba(223, 232, 210, 0.8);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    .chart-container,
+    .chart-iframe {
+        padding: 8px;
+        margin: 5px;
+    }
+
+    .help-button,
+    .open-plot-new-tab-button {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+        top: 8px;
+        left: 8px;
+    }
+
+    .tooltip {
+        max-width: 95%;
+        font-size: 0.9rem;
+        top: 50px;
+        left: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 15px;
+    }
+
+    .chart-container,
+    .chart-iframe {
+        min-height: 200px;
+    }
+
+    .help-button,
+    .open-plot-new-tab-button {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+
+    .tooltip {
+        font-size: 0.85rem;
+    }
 }
