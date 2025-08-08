@@ -113,6 +113,10 @@ small a {
     display: block;
 }
 
+.help-button.active + .tooltip {
+    display: block;
+}
+
 /* Open plot button */
 .open-plot-new-tab-button {
     background-color: transparent;
