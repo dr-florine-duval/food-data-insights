@@ -32,6 +32,11 @@ helpButtons.forEach((button, index) => {
             tooltips[index].style.display = 'block';
         });
 
+        // Show tooltip on click
+        button.addEventListener('click', function() {
+            tooltips[index].style.display = 'block';
+        });
+
         // Hide tooltip on click outside
         document.addEventListener('click', function(event) {
             if (!button.contains(event.target) && !tooltips[index].contains(event.target)) {
@@ -39,9 +44,6 @@ helpButtons.forEach((button, index) => {
             }
         });
 
-        // Show tooltip on click for mobile
-        button.addEventListener('click', function() {
-            tooltips[index].style.display = tooltips[index].style.display === 'block' ? 'none' : 'block';
-        });
+        
     }
 });
