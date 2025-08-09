@@ -91,9 +91,8 @@ small a {
     outline: none;
 }
 
-/* Tooltip */
+/* Tooltip base */
 .tooltip {
-    display: none;
     position: absolute;
     background-color: var(--coolors-2-lighter);
     color: #333;
@@ -105,15 +104,29 @@ small a {
     top: 60px;
     left: 60px;
     transform: translateX(0%);
-    transition: opacity 0.2s;
+    opacity: 0;
+    pointer-events: none; /* Prevent interaction when hidden */
+    transition: opacity 0.3s ease;
 }
 
-.close-tooltip {
-    font-size: 1.2rem; /* Adjust size as needed */
-    color: var(--primary-color); /* Use your primary color */
-    margin-left: 10px; /* Space from the content */
-    cursor: pointer;
+/* Visible state */
+.tooltip.visible {
+    opacity: 1;
+    pointer-events: auto; /* Allow interaction when visible */
 }
+
+/* Close button in top-right */
+.close-tooltip {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
 
 .help-button:hover + .tooltip {
     display: block;
