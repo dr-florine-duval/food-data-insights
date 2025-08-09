@@ -38,7 +38,7 @@ helpButtons.forEach((button, index) => {
             tooltips[index].style.display = 'block';
         });
 
-        // Hide tooltip on clicking outside
+        // Hide tooltip on clicking outside the tooltip
         document.addEventListener('click', function(event) {
             if (!tooltips[index].contains(event.target)) {
                 tooltips[index].style.display = 'none';
