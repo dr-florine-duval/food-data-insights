@@ -4,8 +4,7 @@ function openPlot(plotHtml) {
     newWindow.document.close(); // Close the document to render the content
 }
 
-
-// Set tooltip content
+// Tooltip content
 const tooltipContent = `
     <strong>Tips for enjoying the chart:</strong><br>
     🔬 Hover over data points to see the exact values.<br>
@@ -18,39 +17,47 @@ const tooltipContent = `
     <button class="close-tooltip" style="float: right; background: none; border: none; cursor: pointer;">✖</button>
 `;
 
-// Select all help buttons and tooltips
 const helpButtons = document.querySelectorAll('.help-button');
 const tooltips = document.querySelectorAll('.tooltip');
 
-// Loop through each help button and corresponding tooltip
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
 helpButtons.forEach((button, index) => {
-    // Set the tooltip content for each tooltip
-    if (tooltips[index]) {
-        tooltips[index].innerHTML = tooltipContent;
+    if (!tooltips[index]) return;
 
-        // Show tooltip on mouseover
-        button.addEventListener('mouseover', function() {
-            tooltips[index].style.display = 'block';
+    const tooltip = tooltips[index];
+    tooltip.innerHTML = tooltipContent;
+    const closeButton = tooltip.querySelector('.close-tooltip');
+
+    // === Desktop hover ===
+    if (!isTouchDevice) {
+        button.addEventListener('mouseover', () => {
+            tooltip.style.display = 'block';
         });
 
-        // Show tooltip on click
-        button.addEventListener('click', function() {
-            tooltips[index].style.display = 'block';
+        tooltip.addEventListener('mouseover', () => {
+            tooltip.style.display = 'block';
         });
-
-        // Hide tooltip on clicking outside the tooltip
-        document.addEventListener('click', function(event) {
-            if (!tooltips[index].contains(event.target)) {
-                tooltips[index].style.display = 'none';
-            }
-
-        // Close tooltip on clicking the close button
-        const closeButton = tooltips[index].querySelector('.close-tooltip');
-        if (closeButton) {
-            closeButton.addEventListener('click', function(event) {
-                event.stopPropagation(); // Prevent the click from bubbling up
-                tooltips[index].style.display = 'none';
-            });
-        }
     }
+
+    // === Click/tap to open ===
+    button.addEventListener('click', (event) => {
+        event.stopPropagation();
+        tooltip.style.display = 'block';
+    });
+
+    // === Close on ✖ button ===
+    if (closeButton) {
+        closeButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+            tooltip.style.display = 'none';
+        });
+    }
+
+    // === Close when clicking outside ===
+    document.addEventListener('click', (event) => {
+        if (!tooltip.contains(event.target) && event.target !== button) {
+            tooltip.style.display = 'none';
+        }
+    });
 });
