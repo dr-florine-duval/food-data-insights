@@ -15,6 +15,7 @@ const tooltipContent = `
     📷 Enjoy the interactive chart, and feel free to download the plot as a png as a souvenir!<br>
     <br>
     📖 <strong><i>Need more space? Click on the book to open the chart in its own new tab.</i></strong><br>
+    <button class="close-tooltip" style="float: right; background: none; border: none; cursor: pointer;">✖</button>
 `;
 
 // Select all help buttons and tooltips
@@ -37,13 +38,19 @@ helpButtons.forEach((button, index) => {
             tooltips[index].style.display = 'block';
         });
 
-        // Hide tooltip on click outside
+        // Hide tooltip on clicking outside
         document.addEventListener('click', function(event) {
-            if (!button.contains(event.target) && !tooltips[index].contains(event.target)) {
+            if (!tooltips[index].contains(event.target)) {
                 tooltips[index].style.display = 'none';
             }
-        });
 
-        
+        // Close tooltip on clicking the close button
+        const closeButton = tooltips[index].querySelector('.close-tooltip');
+        if (closeButton) {
+            closeButton.addEventListener('click', function(event) {
+                event.stopPropagation(); // Prevent the click from bubbling up
+                tooltips[index].style.display = 'none';
+            });
+        }
     }
 });
