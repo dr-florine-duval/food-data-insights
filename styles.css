@@ -104,11 +104,18 @@ small a {
 }
 
 .open-plot-new-tab-button {
-    background-color: var(--light-green-grey);
+    background-color: var(--accent-color);
+    color: white;
     top: 60px;
     left: 10px;
     z-index: 40;
     text-decoration: none;
+}
+
+.open-new-plot-icon-in-js {
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    padding: 8px;
 }
 
 /* Tooltip base */
@@ -117,7 +124,7 @@ small a {
     background-color: var(--coolors-2-lighter);
     color: #333;
     border-radius: 8px;
-    padding: 10px;
+    padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 100;
     max-width: 70%;
