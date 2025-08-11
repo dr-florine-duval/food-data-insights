@@ -13,7 +13,7 @@ const tooltipContent = `
     <strong>Extra tip:</strong> click and drag from right to left to zoom horizontally only.<br>
     📷 Enjoy the interactive chart, and feel free to download the plot as a png as a souvenir!<br>
     <br>
-    📖 <strong><i>Need more space? Click on the book to open the chart in its own new tab.</i></strong><br>
+    <strong><i>Need more space? Click on this ⛶ icon on the left of the chart to open it in its own new tab.</i></strong><br>
 `;
 
 const helpButtons = document.querySelectorAll('.help-button');
