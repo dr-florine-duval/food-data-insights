@@ -1,3 +1,19 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector(".menu-toggle");
+  const menu = document.querySelector(".menu");
+
+  toggle.addEventListener("click", () => {
+    menu.classList.toggle("show");
+  });
+
+  // Optional: close menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+      menu.classList.remove("show");
+    }
+  });
+});
+
 function openPlot(plotHtml) {
     const newWindow = window.open('', '_blank');
     newWindow.document.write(plotHtml);

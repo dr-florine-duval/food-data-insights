@@ -78,9 +78,7 @@ nav {
     background-color: var(--text-color);
 }
 
-/* Show menu when the button is clicked */
-.menu-toggle:focus + .menu,
-.menu-toggle:active + .menu {
+.menu.show {
     display: block;
 }
 
