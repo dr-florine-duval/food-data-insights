@@ -5,66 +5,237 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Data Insights</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/css/base.css">
 </head>
 <body>
-<h1>Food Data Insights</h1>
-<nav>
-    <a href="/">Posts</a>
-    <a href="/about/">About</a>
-</nav>
-<hr>
-
+<header>
+    <h1>Food Data Insights</h1>
+    <nav>
+        <button class="menu-toggle" aria-label="Toggle menu">
+            &#9776; <!-- Hamburger icon -->
+        </button>
+        <div class="menu">
+            <a href="/">Posts</a>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+        </div>
+    </nav>
+</header>
+<main>
+    
     <h2>About Food Data Insights</h2>
 
+    
 
-
-    <section style="max-width: 800px; margin: auto; font-family: sans-serif; line-height: 1.6; padding: 1rem;">
-
-  <p>
+<p>
     Nutrition can be surprisingly tricky. You decide you need more protein, less sugar, more vitamin C, or fewer carbs —
     but then comes the real challenge: <strong>what exactly do you eat?</strong> Among the countless fruits, vegetables, meats, and grains,
     which ones actually meet your goals?
-  </p>
+</p>
 
-  <p>
+<p>
     Let’s say you’re looking for foods high in vitamin C. A quick search gives you a list… but it doesn’t tell you which of those
     are also low in sugar, which might be equally important to you. Or maybe you’re focused on fats — aiming for more saturated fats
     and fewer polyunsaturated fats — and you want to compare your options. Or perhaps you’re chasing vitamin A, but not the plant-based
     beta-carotene you see everywhere; you want retinol, the active form your body can readily use.
-  </p>
+</p>
 
-  <p>
+<p>
     These kinds of specific, practical questions often don’t have simple answers in typical nutrition resources.
-  </p>
+</p>
 
-  <h2 style="margin-top: 1.5em;">What I Do Here</h2>
+<h2>What I Do Here</h2>
 
-  <p>
+<p>
     That’s where <strong>Food Data Insights</strong> comes in. Using the USDA food database as my starting point,
     I create interactive data visualizations that let you explore nutrient information in ways that standard lists simply can’t match.
-  </p>
+</p>
 
-  <p>
+<p>
     With these tools, you can:
-  </p>
-  <ul style="margin-left: 1.2em;">
+</p>
+<ul>
     <li>Compare foods not just by a single nutrient, but by combinations or ratios (e.g., vitamin C per 100 grams of sugar).</li>
     <li>Explore nutrient differences across similar foods (like different cuts of meat or varieties of fruit).</li>
     <li>See how preparation methods — raw, boiled, roasted — change nutrient content.</li>
-  </ul>
+</ul>
 
-  <p>
+<p>
     Every post here features an interactive <em>Plotly</em> chart you can explore yourself. The goal is simple:
     give you clear, flexible insights so you can make food choices that truly match your priorities.
-  </p>
+</p>
 
-  <p>
+<p>
     Whether you’re a nutrition professional, a data enthusiast, or just someone curious about what’s on your plate,
     I think you’ll find plenty here to explore — and maybe even a few surprises.
-  </p>
-</section>
+</p>
 
+</main>
+<link rel="stylesheet" href="/css/mailerlite_newsletter.css">
+<footer>
+    <div id="mlb2-29602387" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-29602387">
+      <div class="ml-form-align-center ">
+        <div class="ml-form-embedWrapper embedForm">
+
+          <div class="ml-form-embedBody ml-form-embedBodyHorizontal row-form">
+
+            <div class="ml-form-embedContent" style=" ">
+
+                <h4>Stay in the loop</h4>
+                <p>Get the latest Food Data Insights posts and developments straight to your inbox!</p>
+
+            </div>
+
+            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1735272/forms/162713720508646471/subscribe" data-code="" method="post" target="_blank">
+
+
+              <div class="ml-form-formContent horozintalForm">
+                <div class="ml-form-horizontalRow">
+                  <div class="ml-input-horizontal">
+
+
+                      <div style="width: 100%;" class="horizontal-fields">
+
+
+
+
+
+
+                        <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+
+                          <!-- input -->
+                      <input type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email">
+                      <!-- /input -->
+                        </div>
+
+
+
+                      </div>
+
+                  </div>
+
+
+                  <div class="ml-button-horizontal primary ">
+
+                      <button type="submit" class="primary">Join Newsletter</button>
+
+                    <button disabled="disabled" style="display: none;" type="button" class="loading">
+                      <div class="ml-form-embedSubmitLoad"></div>
+                      <span class="sr-only">Loading...</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Privacy policy -->
+              <div class="ml-form-embedPermissions" style="">
+                <div class="ml-form-embedPermissionsContent horizontal privacy-policy">
+
+
+
+
+                          <p>By subscribing to my newsletter, you consent to the use of your email address for the purpose of sending you my newsletter through MailerLite. Your email address will not be used for anything else or be shared with third parties other than Mailerlite. You can unsubscribe at any time by clicking the link in the newsletter. You can <a href="/contact/">contact</a> me to request access, correction, or deletion of your data.</p>
+
+
+
+                </div>
+              </div>
+              <!-- /Privacy policy -->
+
+
+
+
+
+              <div class="ml-form-checkboxRow ml-validate-required">
+
+                  <label class="checkbox">
+                    <input type="checkbox">
+                    <div class="label-description">
+                      <p>Opt in to receive news and updates.</p>
+                    </div>
+                  </label>
+
+              </div>
+
+
+
+<div class="ml-form-recaptcha ml-validate-required" style="float: left;">
+                <style type="text/css">
+  .ml-form-recaptcha {
+    margin-bottom: 20px;
+  }
+
+  .ml-form-recaptcha.ml-error iframe {
+    border: solid 1px #ff0000;
+  }
+
+  @media screen and (max-width: 480px) {
+    .ml-form-recaptcha {
+      width: 220px!important
+    }
+    .g-recaptcha {
+      transform: scale(0.78);
+      -webkit-transform: scale(0.78);
+      transform-origin: 0 0;
+      -webkit-transform-origin: 0 0;
+    }
+  }
+</style>
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <div class="g-recaptcha" data-sitekey="6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD"></div>
+</div>
+
+
+
+              <input type="hidden" name="ml-submit" value="1">
+
+
+
+              <div class="ml-mobileButton-horizontal">
+                <button type="submit" class="primary">Join Newsletter</button>
+                <button disabled="disabled" style="display: none;" type="button" class="loading">
+                  <div class="ml-form-embedSubmitLoad"></div>
+                  <span class="sr-only">Loading...</span>
+                </button>
+              </div>
+              <input type="hidden" name="anticsrf" value="true">
+            </form>
+          </div>
+
+          <div class="ml-form-successBody row-success" style="display: none">
+
+            <div class="ml-form-successContent">
+
+                <h4>Thank you!</h4>
+
+                  <p>You have successfully joined our subscriber list.</p>
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  <script>
+    function ml_webform_success_29602387() {
+      var $ = ml_jQuery || jQuery;
+      $('.ml-subscribe-form-29602387 .row-success').show();
+      $('.ml-subscribe-form-29602387 .row-form').hide();
+    }
+      </script>
+
+
+      <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
+        <script>
+            fetch("https://assets.mailerlite.com/jsonp/1735272/forms/162713720508646471/takel")
+        </script>
+</footer>
 <script type="text/javascript" src="/script.js"></script>
 </body>
 </html>
