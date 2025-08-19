@@ -1,3 +1,6 @@
+/* STYLES FOR THE WHOLE WEBSITE */
+
+/* General */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -25,18 +28,37 @@
     --root-border: 1px solid #ddd;
     --root-border-radius: 0.5rem;
 }
-
 body {
     background-color: var(--background-color);
     color: var(--text-color);
     font-family: 'Segoe UI', Optima, Tahoma, Geneva, sans-serif;
 }
-
-header, footer {
-    background-color: var(--coolors-3);
+h1, h2, h3, h4, h5, p, hr, ul, img {
+    margin-bottom: 1rem;
+}
+ul {
+    margin-left: 1rem;
+}
+a {
+    color: var(--link-color);
+}
+a:hover {
+    color: var(--link-hover-color);
+}
+small a {
+    color: var(--coolors-2-darker);
+}
+img {
+    max-width: 100%;
+    height: auto;
+    border: var(--root-border);
+    border-radius: var(--root-border-radius);
 }
 
+/* Header */
+
 header {
+    background-color: var(--coolors-3);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,7 +76,6 @@ nav {
     font-size: 2rem;
     cursor: pointer;
 }
-
 .menu {
     display: none;
     position: absolute;
@@ -66,61 +87,112 @@ nav {
     box-shadow: var(--root-box-shadow);
     z-index: 1000;
 }
-
 .menu a {
     display: block;
     padding: 1rem 2rem;
     color: white;
     text-decoration: none;
 }
-
 .menu a:hover {
     background-color: var(--text-color);
 }
-
 .menu.show {
     display: block;
 }
 
+/* Main */
 main {
     margin: 2rem;
 }
 
+/* Footer */
+
 footer {
+    background-color: var(--coolors-3);
     margin-top: 6rem;
     padding: 2rem;
 }
 
-h1, h2, h3, h4, h5, p, hr, ul, img {
-    margin-bottom: 1rem;
+.clickable-linkedin-box {
+    display: block;
+    margin: 0 auto;
+    width: 61.8%;
+    text-decoration: none;
+    color: inherit;
+}
+.clickable-linkedin-box h2 {
+    margin-bottom: 0.5rem;
+}
+.clickable-linkedin-box p {
+    margin-bottom: 0;
 }
 
-ul {
-    margin-left: 1rem;
+.footer-linkedin-container {
+    display: grid; /* Use grid layout */
+    grid-template-columns: 120px 1fr; /* Set widths for the columns */
+    width: 100%;
+    align-items: center;
+    margin: 0 auto;
+    gap: 0rem;
+    background-color: white;
+    box-shadow: var(--root-box-shadow);
+    border: var(--root-border);
+    border-radius: 100px;
+    padding: 0.5rem;
+    transition: transform 0.2s ease;
+}
+.footer-linkedin-container:hover {
+    transform: translateY(-5px);
+}
+.footer-linkedin-image-container {
+   margin: 0;
+   padding: 0;
+}
+.footer-linkedin-image-container img {
+   margin: 0;
+   padding: 0;
+   border: 0;
+}
+.footer-linkedin-text {
+    padding: 1rem;
 }
 
 
-a {
-    color: var(--link-color);
+/* HOMEPAGE WITH OVERVIEW OF POSTS */
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    align-items: stretch;
 }
 
-a:hover {
-    color: var(--link-hover-color);
-}
-
-small a {
-    color: var(--coolors-2-darker);
-}
-
-img {
-    max-width: 100%;
-    height: auto;
+.post-tile {
+    background-color: white;
     border: var(--root-border);
     border-radius: var(--root-border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--root-box-shadow);
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.post-tile:hover {
+    transform: translateY(-5px);
+}
+.post-tile small {
+    margin-bottom: 1rem;
+    color: var(--coolors-4);
+}
+.post-tile div:last-child {
+    margin-top: auto; /* pushes the image section to the bottom */
 }
 
 
-/* CHART ELEMENTS */
+/* POST PAGES */
+
+/* Chart elements */
 
 .chart-wrapper {
     position: relative;
@@ -151,16 +223,10 @@ img {
     cursor: pointer;
     box-shadow: var(--root-box-shadow);
     position: absolute;
-
-    /* Center content */
     display: flex;
     align-items: center;
     justify-content: center;
-
-    /* Remove old centering dependency */
     line-height: normal;
-
-    /* Positioning */
     left: 0.5rem;
     z-index: 40;
 }
@@ -197,7 +263,6 @@ img {
     pointer-events: none; /* Prevent interaction when hidden */
     transition: opacity 0.3s ease;
 }
-
 /* Visible state */
 .tooltip.visible {
     opacity: 1;
@@ -216,96 +281,31 @@ img {
     color: var(--primary-color);
 }
 
+/* LINK TO LINKEDIN */
 
-.posts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    align-items: stretch;
-}
-
-.post-tile {
-    background-color: white;
-    border: var(--root-border);
-    border-radius: var(--root-border-radius);
-    padding: 1.5rem;
-    box-shadow: var(--root-box-shadow);
-    transition: transform 0.2s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.post-tile:hover {
-    transform: translateY(-5px);
-}
-
-.post-tile small {
-    margin-bottom: 1rem;
-    color: var(--coolors-4);
-}
-
-.post-tile div:last-child {
-    margin-top: auto; /* pushes the image section to the bottom */
-}
-
-.clickable-linkedin-box {
+.link-linkedin-post {
     display: block;
-    margin: 0 auto;
-    width: 61.8%;
+    width: 38.2%;
+    text-align: center;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    color: white;
+    background-color: #0077b5;
     text-decoration: none;
-    color: inherit;
-}
-
-.clickable-linkedin-box h2 {
-    margin-bottom: 0.5rem;
-}
-
-.clickable-linkedin-box p {
-    margin-bottom: 0;
-}
-
-.clickable-linkedin-box a.override-hover:hover {
-    color: var(--text-color);
-}
-
-.footer-linkedin-container {
-    display: grid; /* Use grid layout */
-    grid-template-columns: 120px 1fr; /* Set widths for the columns */
-    width: 100%;
-    align-items: center;
-    margin: 0 auto;
-    gap: 0rem;
-    background-color: white;
     box-shadow: var(--root-box-shadow);
     border: var(--root-border);
     border-radius: 100px;
-    padding: 0.5rem;
     transition: transform 0.2s ease;
-
 }
-
-.footer-linkedin-container:hover {
+.link-linkedin-post:hover {
     transform: translateY(-5px);
 }
-
-.footer-linkedin-image-container {
-   margin: 0;
-   padding: 0;
+.link-linkedin-post p {
+    margin-bottom: 0;
 }
 
-.footer-linkedin-image-container img {
-   margin: 0;
-   padding: 0;
-   border: 0;
-}
+/* CONTACT PAGE */
 
-.footer-linkedin-text {
-    padding: 1rem;
-}
-
-
-/* Contact page */
 .contact-container {
     display: grid; /* Use grid layout */
     grid-template-columns: minmax(150px, 20%) 1fr; /* Set widths for the columns */
