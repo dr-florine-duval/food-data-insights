@@ -249,6 +249,62 @@ img {
     margin-top: auto; /* pushes the image section to the bottom */
 }
 
+.clickable-linkedin-box {
+    display: block;
+    margin: 0 auto;
+    width: 61.8%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.clickable-linkedin-box h2 {
+    margin-bottom: 0.5rem;
+}
+
+.clickable-linkedin-box p {
+    margin-bottom: 0;
+}
+
+.clickable-linkedin-box a.override-hover:hover {
+    color: var(--text-color);
+}
+
+.footer-linkedin-container {
+    display: grid; /* Use grid layout */
+    grid-template-columns: 120px 1fr; /* Set widths for the columns */
+    width: 100%;
+    align-items: center;
+    margin: 0 auto;
+    gap: 0rem;
+    background-color: white;
+    box-shadow: var(--root-box-shadow);
+    border: var(--root-border);
+    border-radius: 100px;
+    padding: 0.5rem;
+    transition: transform 0.2s ease;
+
+}
+
+.footer-linkedin-container:hover {
+    transform: translateY(-5px);
+}
+
+.footer-linkedin-image-container {
+   margin: 0;
+   padding: 0;
+}
+
+.footer-linkedin-image-container img {
+   margin: 0;
+   padding: 0;
+   border: 0;
+}
+
+.footer-linkedin-text {
+    padding: 1rem;
+}
+
+
 /* Contact page */
 .contact-container {
     display: grid; /* Use grid layout */
@@ -304,6 +360,7 @@ img {
   border-radius: 2rem;
   cursor: pointer;
   font-size: 1rem;
+  text-decoration: none;
   transition: background-color 0.3s ease;
 }
 .submit-btn:hover {
