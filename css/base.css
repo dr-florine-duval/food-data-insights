@@ -20,7 +20,7 @@
     --accent-color: var(--coolors-2);
     --light-green-grey: #d8dbce;
     --background-color: #f8f4ed; /* lighter version of coolors-3 */
-    --text-color:  #3d1b00 ; /* Near-black version of coolors-4 */
+    --text-color:  #3d1b00; /* Near-black version of coolors-4 */
     --primary-color-lighter:  #dc3752;
     --link-color: var(--primary-color);
     --link-hover-color: var(--primary-color-lighter);
@@ -65,6 +65,26 @@ header {
     padding: 2rem;
 }
 
+.header-link {
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Center items vertically */
+    text-decoration: none; /* Remove underline from link */
+}
+
+.logo {
+    width: 8rem; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 3rem; /* Space between logo and title */
+    border: 0;
+    border-radius: 0;
+}
+
+.title {
+    font-size: 3rem;
+    color: var(--text-color);
+}
+
+
 nav {
     position: relative;
 }
@@ -73,7 +93,7 @@ nav {
     background: none;
     border: none;
     color: var(--text-color);
-    font-size: 2rem;
+    font-size: 3rem;
     cursor: pointer;
 }
 .menu {
