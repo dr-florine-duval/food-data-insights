@@ -33,7 +33,10 @@ body {
     color: var(--text-color);
     font-family: 'Segoe UI', Optima, Tahoma, Geneva, sans-serif;
 }
-h1, h2, h3, h4, h5, p, hr, ul, img {
+h1, h2 {
+    margin-bottom: 2rem;
+}
+h3, h4, h5, p, hr, ul, img {
     margin-bottom: 1rem;
 }
 ul {
@@ -72,9 +75,9 @@ header {
 }
 
 .logo {
-    width: 8rem; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 3rem; /* Space between logo and title */
+    height: 5rem;
+    width: auto;
+    margin: 0 3rem 0 0;
     border: 0;
     border-radius: 0;
 }
@@ -82,6 +85,7 @@ header {
 .title {
     font-size: 3rem;
     color: var(--text-color);
+    margin: 0;
 }
 
 
@@ -187,6 +191,11 @@ footer {
     align-items: stretch;
 }
 
+.posts-grid a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .post-tile {
     background-color: white;
     border: var(--root-border);
@@ -216,6 +225,7 @@ footer {
 
 .chart-wrapper {
     position: relative;
+    margin-bottom: 2rem;
 }
 
 .chart-iframe {
