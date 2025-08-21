@@ -33,10 +33,7 @@ body {
     color: var(--text-color);
     font-family: 'Segoe UI', Optima, Tahoma, Geneva, sans-serif;
 }
-h1, h2 {
-    margin-bottom: 2rem;
-}
-h3, h4, h5, p, hr, ul, img {
+h1, h2, h3, h4, h5, p, hr, ul, img {
     margin-bottom: 1rem;
 }
 ul {
@@ -220,6 +217,11 @@ footer {
 
 
 /* POST PAGES */
+
+.post-info {
+    color: var(--coolors-4);
+    margin-bottom: 2rem;
+}
 
 /* Chart elements */
 
