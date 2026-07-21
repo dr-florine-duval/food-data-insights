@@ -19,7 +19,7 @@
 <body>
 <header>
     <a href="" class="header-link">
-        <img src="images/logo.png" alt="Food Data Insights Logo" class="logo">
+        <img src="https://dr-florine-duval.github.io/food-data-insights/images/logo.png" alt="Food Data Insights Logo" class="logo">
         <h1 class="title">Food Data Insights</h1>
     </a>
     <nav>
@@ -44,7 +44,6 @@
         <p>If you have any questions, comments, suggestions, or just want to say hi, I’d love to hear from you!</p>
     </div>
     <div class="contact-section">
-        <h3>3 ways to get in touch</h3>
         <div class="contact-method">
             <h4>1) Send an email directly</h4>
             <img src="images/email_contact_image.jpg" alt="email contact image">
@@ -52,71 +51,12 @@
         <div class="contact-method">
             <h4>2) Connect and send me a message on LinkedIn</h4>
             <a href="https://www.linkedin.com/in/dr-florine-duval/" target="_blank">
-                <img src="images/linkedin_contact_image.jpg" alt="linkedin contact image">
+                <img src="https://dr-florine-duval.github.io/food-data-insights/images/linkedin_contact_image.jpg" alt="linkedin contact image">
             </a>
         </div>
-        <div class="contact-method">
-            <h4>3) Send an email via the form below</h4>
-            <div class="contact-form">
-                <form action="https://api.staticforms.xyz/submit" method="POST">
-                  <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" class="form-control" required>
-                  </div>
 
-                  <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" class="form-control" required>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
-                  </div>
-
-                  <!-- reCAPTCHA widget with callback -->
-                  <div class="g-recaptcha"
-                       data-sitekey="6Lf6PaYrAAAAAKY5-9NOogt1ALTwEBr3UFRcnFgE"
-                       data-callback="recaptchaCompleted"
-                       data-size="normal">
-                  </div>
-
-                  <!-- Hidden fields -->
-                  <input type="hidden" name="accessKey" value="sf_b4h0be08613ffi0063j4hlmh">
-                  <input type="hidden" name="redirectTo" value="https://www.fooddatainsights.com">
-
-                  <!-- Disabled by default -->
-                  <button class="submit-btn" type="submit" id="submitBtn" disabled>Send Message</button>
-                </form>
-            </div>
-        </div>
     </div>
 </div>
-<script>
-  if (window.innerWidth < 320) {
-    var recaptcha = document.querySelector('.g-recaptcha');
-    if (recaptcha) {
-      recaptcha.setAttribute('data-size', 'compact');
-    }
-  }
-</script>
-<!-- Load reCAPTCHA -->
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<script>
-  document.querySelector('form').addEventListener('submit', function(event) {
-  const email = document.querySelector('input[name="email"]').value;
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  if (!emailRegex.test(email)) {
-    event.preventDefault();
-    alert('Please enter a valid email address');
-  }
-});
-
-  function recaptchaCompleted() {
-      document.getElementById('submitBtn').disabled = false;
-  }
-</script>
 
 </main>
 <footer>
